@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "338300f6-6123-4619-b01a-736efedd5081",
+		"name": "assignment_recipe_sharing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "recipe",
+			"item": [
+				{
+					"name": "add_recipe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ingredients\":[\"chicken\",\"rice\"],\r\n    \"cookingSteps\":[\"boil\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_recipes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/recipe/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"list"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post_action_like",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actionType\":\"LIKE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/d8c6bb8e-f066-44a8-ae88-88c2db50d608/action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"d8c6bb8e-f066-44a8-ae88-88c2db50d608",
+								"action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post_action_comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actionType\":\"COMMENT\",\r\n    \"comment\": \"tasty.....\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/3ee2560d-aadd-46e9-800c-bedf35a6b4cc/action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"3ee2560d-aadd-46e9-800c-bedf35a6b4cc",
+								"action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_recipe",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ingredients\":[\"fish\", \"ghee\", \"rice\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/b029a71d-8435-47cb-88c7-8aa8d4336eb8/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"b029a71d-8435-47cb-88c7-8aa8d4336eb8",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_with_filters",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ingredients\":[\"mutton\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/list_with_filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"list_with_filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_recipe",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/recipe/3bda30ba-91c2-4418-9172-79d959907ee2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"3bda30ba-91c2-4418-9172-79d959907ee2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload_cooking_pics",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/Praveen/OneDrive/Desktop/cooking_1.jpg",
+										"/C:/Users/Praveen/OneDrive/Desktop/cooking_2.jpg",
+										"/C:/Users/Praveen/OneDrive/Desktop/cooking_3.jpeg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/3ee2560d-aadd-46e9-800c-bedf35a6b4cc/images/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"3ee2560d-aadd-46e9-800c-bedf35a6b4cc",
+								"images",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_cooking_pics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/recipe/20bdf6bd-78b8-40aa-8e5a-1664e227a889/images/download",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipe",
+								"20bdf6bd-78b8-40aa-8e5a-1664e227a889",
+								"images",
+								"download"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "security",
+			"item": [
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"praveenV\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"praveen\",\r\n    \"lastName\":\"v\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"praveenV\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/2beececd-eebf-4015-9fae-ce185c07c906/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"2beececd-eebf-4015-9fae-ce185c07c906",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload_profile_pic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Praveen/OneDrive/Desktop/flower.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/b637bb29-57d2-4981-a0c3-97f02048a692/image/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"b637bb29-57d2-4981-a0c3-97f02048a692",
+								"image",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_profile_pic",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer-token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Praveen/OneDrive/Desktop/flower.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/692c94b3-57ab-46aa-91ab-c490601ca7cc/image/download",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"692c94b3-57ab-46aa-91ab-c490601ca7cc",
+								"image",
+								"download"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
